@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
-
-## expect music passed in from mount, fail otherwise (mount not available?)
-[[ "$(ls -A /mpd/music)" ]] ||  exit
+#!/usr/bin/env sh
 
 touch /mpd/cache/{tag_cache,state,sticker.sql} \
   && chmod -R 0777 /mpd/cache \
