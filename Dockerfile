@@ -5,7 +5,7 @@ RUN \
     apk add mpd && \
     rm -rf /var/lib/mpd/* && \
     rm -rf /var/cache/apk/* && \
-    mkdir -p /mpd/playlists /mpd/cache
+    mkdir -p /mpd/playlists /mpd/cache /mpd/music
 
 COPY mpd.conf /etc/mpd.conf
 
