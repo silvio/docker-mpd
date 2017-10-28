@@ -1,13 +1,10 @@
-FROM debian:sid
-
-ENV DEBIAN_FRONTEND noninteractive
+FROM alpine:latest
 
 RUN \
-    apt-get update -qq && \
-    apt-get install -qqy --no-install-recommends mpd && \
+    apk update && \
+    apk add mpd && \
     rm -rf /var/lib/mpd/* && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* && \
+    rm -rf /var/cache/apk/* && \
     mkdir -p /mpd/playlists /mpd/cache
 
 COPY mpd.conf /etc/mpd.conf
